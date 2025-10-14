@@ -29,9 +29,11 @@ int main(int argc, char* argv[])
 	std::chrono::high_resolution_clock timer;
 	std::chrono::steady_clock::time_point t1 = timer.now();
 	
+#ifdef USE_CALLBACK_PROCESS_OBJECT	
 	// This is optional, if you want to see how the loading is going... 
 	cCallbackProgress progressObject;
 	pMG->setProgressCallbackObjectInstance(&progressObject);
+#endif
 
 
 	std::string errorString;

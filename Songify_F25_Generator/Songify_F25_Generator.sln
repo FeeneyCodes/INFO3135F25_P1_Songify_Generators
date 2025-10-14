@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Songify_F25_Generator", "Songify_F25_Generator\Songify_F25_Generator.vcxproj", "{F1A29F79-3C13-4A32-83AA-6BDA3C710A21}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Songify_F25_Generator_Library", "Songify_F25_Generator_Library\Songify_F25_Generator_Library.vcxproj", "{510FCFD5-334E-4229-83D0-3CA5FD041A21}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Songify_F25_StarterCode", "Songify_F25_StarterCode\Songify_F25_StarterCode.vcxproj", "{A9D683CA-1066-43F0-9388-BBB4F724DB40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +25,22 @@ Global
 		{F1A29F79-3C13-4A32-83AA-6BDA3C710A21}.Release|x64.Build.0 = Release|x64
 		{F1A29F79-3C13-4A32-83AA-6BDA3C710A21}.Release|x86.ActiveCfg = Release|Win32
 		{F1A29F79-3C13-4A32-83AA-6BDA3C710A21}.Release|x86.Build.0 = Release|Win32
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Debug|x64.ActiveCfg = Debug|x64
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Debug|x64.Build.0 = Debug|x64
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Debug|x86.ActiveCfg = Debug|Win32
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Debug|x86.Build.0 = Debug|Win32
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Release|x64.ActiveCfg = Release|x64
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Release|x64.Build.0 = Release|x64
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Release|x86.ActiveCfg = Release|Win32
+		{510FCFD5-334E-4229-83D0-3CA5FD041A21}.Release|x86.Build.0 = Release|Win32
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Debug|x64.ActiveCfg = Debug|x64
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Debug|x64.Build.0 = Debug|x64
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Debug|x86.ActiveCfg = Debug|Win32
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Debug|x86.Build.0 = Debug|Win32
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Release|x64.ActiveCfg = Release|x64
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Release|x64.Build.0 = Release|x64
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Release|x86.ActiveCfg = Release|Win32
+		{A9D683CA-1066-43F0-9388-BBB4F724DB40}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
