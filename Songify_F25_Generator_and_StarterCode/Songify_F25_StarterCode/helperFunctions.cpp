@@ -113,10 +113,66 @@ bool comparePeople(const cPerson &A, const cPerson &B, std::vector<std::string> 
 		bTheyMatch = false;
 	}
 
+	// Address?
+	if ( A.streetNumber != B.streetNumber )
+	{
+		vecDifferences.push_back("Street numbers don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.streetName != B.streetName )
+	{
+		vecDifferences.push_back("Stret names don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.streetType != B.streetType )
+	{
+		vecDifferences.push_back("Street types don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.streetDirection != B.streetDirection )
+	{
+		vecDifferences.push_back("Street directions don't match.");
+		bTheyMatch = false;
+	}
+	bool bKeepScanning = true;
+	for ( unsigned int index = 0; (index != 6) && bKeepScanning; index++ )
+	{
+		if ( A.postalCode[index] != B.postalCode[index] )
+		{
+			vecDifferences.push_back("Postal codes don't match.");
+			bTheyMatch = false;
+			bKeepScanning = false;
+			break;
+		}
+	}
+	for ( unsigned int phoneNumberIndex = 0; phoneNumberIndex != 4; phoneNumberIndex++ )
+	{
+		bKeepScanning = true;
+		for ( unsigned int digitIndex = 0; (digitIndex != 11) && bKeepScanning; digitIndex++ )
+		{
+			if ( A.phoneNumbers[phoneNumberIndex][digitIndex] != B.phoneNumbers[phoneNumberIndex][digitIndex] )
+			{
+				std::stringstream ssError;
+				ssError << "Phone number [" << phoneNumberIndex << "] don't match.";
+				vecDifferences.push_back(ssError.str());
+				bTheyMatch = false;
+				bKeepScanning = false;
+			}
+		}
+	}
+	if ( A.SIN != B.SIN )
+	{
+		vecDifferences.push_back("SINs don't match.");
+		bTheyMatch = false;		
+	}
 
+	if ( const_cast<cPerson&>(A).getSongifyUniqueUserID() != const_cast<cPerson&>(B).getSongifyUniqueUserID() )
+	{
+		vecDifferences.push_back("Songify UniqueUserIDs don't match.");
+		bTheyMatch = false;
+	}
 
-
-	bool bTheyMatch;
+	return bTheyMatch;
 }
 
 // Returns true if identical.
@@ -126,8 +182,51 @@ bool compareSongs(cSong &A, cSong &B, std::vector<std::string> &vecDifferences)
 {
 	bool bTheyMatch = true;
 
+	if ( A.name != B.name )
+	{
+		vecDifferences.push_back("The names don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.artist != B.artist )
+	{
+		vecDifferences.push_back("The artists don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.releaseDateDay != B.releaseDateDay )
+	{
+		vecDifferences.push_back("The release days don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.releaseDateMonth != B.releaseDateMonth )
+	{
+		vecDifferences.push_back("The release months don't match.");
+		bTheyMatch = false;
+	}
+	if ( A.releaseDateYear != B.releaseDateYear )
+	{
+		vecDifferences.push_back("The release years don't match.");
+		bTheyMatch = false;
+	}
+	
+//	// Not sure if we want to compare these for "being different"
+// 	// I mean, they ARE the same song even if two people rate them 
+// 	//  differently or play them more or less often, right?
+//	if ( A.rating != B.rating )
+//	{
+//		vecDifferences.push_back("User ratings are different.");
+//		bTheyMatch = false;
+//	}
+//	if ( A.numberOfTimesPlayed != B.numberOfTimesPlayed )
+//	{
+//		vecDifferences.push_back("Number of times played is different.");
+//		bTheyMatch = false;
+//	}
 
-
+	if (const_cast<cSong&>(A).getUniqueID() != const_cast<cSong&>(B).getUniqueID() )
+	{
+		vecDifferences.push_back("The uniqueIDs don't match.");
+		bTheyMatch = false;
+	}
 
 	return bTheyMatch;
 }
