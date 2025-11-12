@@ -24,6 +24,7 @@
     <ProjectGuid>{2fbf1a27-069f-4b20-88d0-c0bd1c602020}</ProjectGuid>
     <RootNamespace>SongifyF25GeneratorDLL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Songify_F25_Generator_DLL (uses lib files)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -116,6 +117,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>CopyLibraryAndHeaderFiles.bat</Command>
+      <Message>Copies library and header files from library project.</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -133,11 +138,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PreBuildEvent>
+      <Command>CopyLibraryAndHeaderFiles.bat</Command>
+      <Message>Copies library and header files from library project.</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cMusicGenerator.h" />
+    <ClInclude Include="cPerson.h" />
+    <ClInclude Include="cPersonGenerator.h" />
+    <ClInclude Include="cSong.h" />
     <ClInclude Include="Songify_F25_Generator_DLL.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cPerson.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

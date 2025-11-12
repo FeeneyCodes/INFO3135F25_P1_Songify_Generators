@@ -783,7 +783,8 @@ cSong cMG_Imp::getRandomSong(void)
 	}
 
 	
-	unsigned int randSongIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % this->getNumberOfSongsLoaded() ) - 1;
+//	unsigned int randSongIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % this->getNumberOfSongsLoaded() ) - 1;
+	unsigned int randSongIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % (this->getNumberOfSongsLoaded() - 1 ));
 
 	// Which list of songs?
 	if (randSongIndex < this->numberOfAudiioInfoElements)

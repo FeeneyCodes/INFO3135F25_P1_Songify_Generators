@@ -18,9 +18,24 @@
     <ClInclude Include="Songify_F25_Generator_DLL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cMusicGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cPerson.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cPersonGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cSong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cPerson.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -558,7 +558,7 @@ std::string cPersonGenerator_Imp::getRandomFirstName(bool bUseDistribution)
 	if ( ! bUseDistribution ) 
 	{
 		// Just pick one
-		unsigned int randNameIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % (unsigned int)this->vecBabyNames.size() ) - 1;
+		unsigned int randNameIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % ((unsigned int)this->vecBabyNames.size() - 1) );
 
 		firstName = this->vecBabyNames[randNameIndex].name;
 	}
@@ -592,7 +592,7 @@ std::string cPersonGenerator_Imp::getRandomLastName(bool bUseDistribution)
 	if ( ! bUseDistribution )
 	{
 		// Just pick one
-		unsigned int randNameIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % (unsigned int)this->vecSurnames.size()) - 1;
+		unsigned int randNameIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % ((unsigned int)this->vecSurnames.size() - 1) );
 
 		lastName = this->vecSurnames[randNameIndex].name;
 	}
@@ -634,7 +634,7 @@ sCanadianCityInfo cPersonGenerator_Imp::getRandomCity(bool bUseDistribution)
 	if ( ! bUseDistribution )
 	{
 		// Just pick one
-		unsigned int randCityIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % (unsigned int)this->vecCanadianCities.size()) - 1;
+		unsigned int randCityIndex = ((unsigned int)(this->p_theRandomizer->getNextRand()) % ((unsigned int)this->vecCanadianCities.size() - 1) );
 
 		city = this->vecCanadianCities[randCityIndex];
 	}

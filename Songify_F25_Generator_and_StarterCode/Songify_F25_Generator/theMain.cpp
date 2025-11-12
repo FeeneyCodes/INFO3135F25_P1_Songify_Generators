@@ -167,6 +167,60 @@ int main(int argc, char* argv[])
 			<< std::endl;
 	}
 
+
+	// Stress test: generate a lot of songs and people
+	const unsigned int NUM_PEOPLE_STRESS = 1'000'000;
+	// number of dots for progress
+	const unsigned int NUM_PEOPLE_STRESS_DOTS = NUM_PEOPLE_STRESS / 100;
+
+	std::stringstream ssProgress;
+	ssProgress << "Generating " << NUM_PEOPLE_STRESS << " people ";
+	std::string baseProgressString = ssProgress.str();
+	for (unsigned int count = 0; count != NUM_PEOPLE_STRESS; count++)
+	{
+		cPerson aPerson = pPG->generateRandomPerson(true);
+		if (count % NUM_PEOPLE_STRESS_DOTS == 0)
+		{
+			// Clear text
+			for (const char c : ssProgress.str())
+			{
+				std::cout << '\b';
+			}
+			unsigned int percentDone = count / NUM_PEOPLE_STRESS_DOTS;
+			ssProgress.str("");
+			ssProgress << baseProgressString << "(" << percentDone << "%)";
+			std::cout << ssProgress.str();
+		}
+	}
+	std::cout << ". Done." << std::endl;
+
+	const unsigned int NUM_SONGS_STRESS = 1'000'000'000;
+	// number of dots for progress
+	const unsigned int NUM_SONGS_STRESS_DOTS = NUM_SONGS_STRESS / 100;
+
+	ssProgress.str("");
+	ssProgress << "Generating " << NUM_SONGS_STRESS << " songs";
+	baseProgressString = ssProgress.str();
+	std::cout << ssProgress.str();
+	for (unsigned int count = 0; count != NUM_SONGS_STRESS; count++)
+	{
+		cSong aSong = pMG->getRandomSong();
+		if (count % NUM_SONGS_STRESS_DOTS == 0)
+		{
+			// Clear text
+			for (const char c : ssProgress.str())
+			{
+				std::cout << '\b';
+			}
+			unsigned int percentDone = count / NUM_SONGS_STRESS_DOTS;
+			ssProgress.str("");
+			ssProgress << baseProgressString << "(" << percentDone << "%)";
+			std::cout << ssProgress.str();
+		}
+	}
+	std::cout << ". Done." << std::endl;
+
+
 	delete pMG;
 	delete pPG;
 
